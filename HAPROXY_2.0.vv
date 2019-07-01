@@ -1,0 +1,50 @@
+HA-Proxy version 2.0.0 2019/06/16 - https://haproxy.org/
+Build options :
+  TARGET  = linux-glibc
+  CPU     = generic
+  CC      = gcc
+  CFLAGS  = -O2 -g -fno-strict-aliasing -Wdeclaration-after-statement -fwrapv -Wno-unused-label -Wno-sign-compare -Wno-unused-parameter -Wno-old-style-declaration -Wno-ignored-qualifiers -Wno-clobbered -Wno-missing-field-initializers -Wtype-limits -Wshift-negative-value -Wshift-overflow=2 -Wduplicated-cond -Wnull-dereference
+  OPTIONS = USE_PCRE2=1 USE_PCRE2_JIT=1 USE_GETADDRINFO=1 USE_OPENSSL=1 USE_LUA=1 USE_ZLIB=1
+
+Feature list : +EPOLL -KQUEUE -MY_EPOLL -MY_SPLICE +NETFILTER -PCRE -PCRE_JIT +PCRE2 +PCRE2_JIT +POLL -PRIVATE_CACHE +THREAD -PTHREAD_PSHARED -REGPARM -STATIC_PCRE -STATIC_PCRE2 +TPROXY +LINUX_TPROXY +LINUX_SPLICE +LIBCRYPT +CRYPT_H -VSYSCALL +GETADDRINFO +OPENSSL +LUA +FUTEX +ACCEPT4 -MY_ACCEPT4 +ZLIB -SLZ +CPU_AFFINITY +TFO +NS +DL +RT -DEVICEATLAS -51DEGREES -WURFL -SYSTEMD -OBSOLETE_LINKER +PRCTL +THREAD_DUMP -EVPORTS
+
+Default settings :
+  bufsize = 16384, maxrewrite = 1024, maxpollevents = 200
+
+Built with multi-threading support (MAX_THREADS=64, default=16).
+Built with OpenSSL version : OpenSSL 1.1.0j  20 Nov 2018
+Running on OpenSSL version : OpenSSL 1.1.0j  20 Nov 2018
+OpenSSL library supports TLS extensions : yes
+OpenSSL library supports SNI : yes
+OpenSSL library supports : TLSv1.0 TLSv1.1 TLSv1.2
+Built with Lua version : Lua 5.3.3
+Built with network namespace support.
+Built with transparent proxy support using: IP_TRANSPARENT IPV6_TRANSPARENT IP_FREEBIND
+Built with zlib version : 1.2.8
+Running on zlib version : 1.2.8
+Compression algorithms supported : identity("identity"), deflate("deflate"), raw-deflate("deflate"), gzip("gzip")
+Built with PCRE2 version : 10.22 2016-07-29
+PCRE2 library supports JIT : yes
+Encrypted password support via crypt(3): yes
+
+Available polling systems :
+      epoll : pref=300,  test result OK
+       poll : pref=200,  test result OK
+     select : pref=150,  test result OK
+Total: 3 (3 usable), will use epoll.
+
+Available multiplexer protocols :
+(protocols marked as <default> cannot be specified using 'proto' keyword)
+              h2 : mode=HTX        side=FE|BE     mux=H2
+              h2 : mode=HTTP       side=FE        mux=H2
+       <default> : mode=HTX        side=FE|BE     mux=H1
+       <default> : mode=TCP|HTTP   side=FE|BE     mux=PASS
+
+Available services : none
+
+Available filters :
+        [SPOE] spoe
+        [COMP] compression
+        [CACHE] cache
+        [TRACE] trace
+
